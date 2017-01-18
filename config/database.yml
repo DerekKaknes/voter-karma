@@ -1,0 +1,8 @@
+development:
+  adapter: sqlite3
+  database: 'db/voterfile.sqlite'
+
+test:
+  adapter: sqlite3
+  database: 'db/voterfile_test.sqlite'
+

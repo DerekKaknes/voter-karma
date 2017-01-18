@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>VoterKarma</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' href="<%= url('/stylesheets/application.css') %>">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+</head>
+
+
+<body>
+
+<!--in body navbar-->
+<nav class="navbar navbar-default navbar-fixed-top" style="border-color:rgb(117,158,205)">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" style="color:rgb(117,158,205); font-size:150%; font-weight:bold;"><span style="color:black">Voter</span>Karma</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-element"><a href="/about">About Your Score</a></li>
+        <% if logged_in? %>
+          <li><a href="#" style="color:rgb(117,158,205); font-size:150%;">Welcome <%= currentuser.firstname.capitalize %>! <span class="glyphicon glyphicon-user"></span></a></li>
+        <% else %>
+          <li class="nav-element"><a href="/score/claim">Claim This Record Now</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id='main-body-container' class='container-fluid'>
+<%= yield %>
+</div>
+
+<!-- footer start -->
+<footer class="container-fluid text-center" style="width=100%; margin=0;">
+  <p>Website created by members of the VoterKarma Team at Debug Politics NYC.</p>
+  <p>Thank you Debug Politics for organizing the event!</p>
+</footer>
+<!-- footer end -->
+</body>
+</html>

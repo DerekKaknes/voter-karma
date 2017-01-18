@@ -1,0 +1,64 @@
+
+<div class = "container-fluid">
+
+<div class="container text-center well">
+
+
+<h2 class="text-center">Find Out Your <span style="font-weight: bold;">Voter<span style=" color:rgb(117,158,205)">Karma</span></span> Today!</h2>  
+<div class="row">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<form  action="/score" method="GET">
+
+  <div class="form-group">
+    <table class="table borderless table-condensed">
+      <tr>
+        <td><label for='firstname'>First Name:</label></td>
+        <td><input style="color:#F05F40;" type="text" id="firstname" name='firstname' placeholder="e.g. John"></td>
+      </tr>
+      <tr>
+        <td><label for='lastname'>Last Name:</label></td>
+        <td><input style="color:#F05F40;" type="text" id="lastname" name='lastname' placeholder="e.g. Smith"></td>
+      </tr>
+      <tr>
+        <td><label for='dob'>Date of Birth:</label></td>
+        <td><input style="color:#F05F40;" type="text" id="dob" name='dob' placeholder="format: YYYYMMDD"></td>
+      </tr>
+    </table>
+  </div>
+  <div>
+  <button type="submit" class="btn btn-primary btn-xl page-scroll" style="background-color:rgb(245,166,35); border-color:rgb(245,166,35);">Get My Score</button>
+  </div>
+</form>
+</div>
+<div class="col-sm-4"></div>
+</div>
+
+<!---new row about-->
+<div class="row" style="padding-top:50px;">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-2">
+    <img src="/img/Voting.png" class="img-responsive" alt="voting">
+    <h4 class="text-center">Your voter history is compiled</h4>
+  </div>
+  <div class="col-sm-2">
+    <img  src="/img/Arrow.png" class="img-responsive" alt="flow arrow" style="padding-top:40px">
+  </div>
+  <div class="col-sm-2">
+    <img src="/img/Scores.png" class="img-responsive" alt="scores">
+    <h4 class="text-center">We analyze your election voting history</h4>
+  </div>
+  <div class="col-sm-2">
+    <img src="/img/Arrow.png" class="img-responsive" alt="flow arrow" style="padding-top:40px">
+  </div>
+  <div class="col-sm-2">
+    <img src="/img/Score.png" class="img-responsive" alt="score">
+    <h4 class="text-center">Your overall VoterKarma score is created</h4>
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div>
+<!---end row about-->
+
+</div>

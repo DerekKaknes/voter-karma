@@ -1,0 +1,43 @@
+body {
+  padding-top: 65px;
+  background-color:rgb(82,115,153);
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #e7e7e7;
+}
+
+div#main-body-container {
+  min-height: 100px;
+}
+
+.borderless td, .borderless th, td {
+    border: none;
+}
+
+.table {
+    border-bottom:0px !important;
+}
+
+.table th, .table td {
+    border: 1px !important;
+}
+
+.fixed-table-container {
+    border:0px !important;
+}
+
+div>img {
+  margin:auto;
+}
+
+h4 {
+  align:center;
+}
+
+nav li.nav-element, .navbar-brand {
+  color: rgb(117, 158, 205);
+  font-size: 150%;
+}
