@@ -31,9 +31,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-element"><a href="/about">About Your Score</a></li>
         <% if logged_in? %>
-          <li><a href="#" style="color:rgb(117,158,205); font-size:150%;">Welcome <%= currentuser.firstname.capitalize %>! <span class="glyphicon glyphicon-user"></span></a></li>
+          <li class="nav-element"><a href="/score">View Your Score</a></li>
+          <li><a href="#" style="color:rgb(117,158,205); font-size:150%;">Welcome <%= current_user.firstname.capitalize %>! <span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="/logout">Logout</a></li>
         <% else %>
-          <li class="nav-element"><a href="/score/claim">Claim This Record Now</a></li>
+          <li class="nav-element"><a href="/score/new">Get Your Score</a></li>
+          <li class="nav-element"><a href="/login">Login</a></li>
         <% end %>
       </ul>
     </div>

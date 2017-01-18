@@ -9,6 +9,11 @@ footer {
   background-color: #e7e7e7;
 }
 
+button.btn {
+  background-color: rgb(245, 166, 35);
+  border-color: rgb(245, 166, 35);
+}
+
 div#main-body-container {
   min-height: 100px;
 }
