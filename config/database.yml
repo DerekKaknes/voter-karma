@@ -6,3 +6,7 @@ test:
   adapter: sqlite3
   database: 'db/voterfile_test.sqlite'
 
+production:
+  adapter: postgresql
+  database: <%= DATABASE_URL %>
+
