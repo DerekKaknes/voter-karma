@@ -8,5 +8,5 @@ test:
 
 production:
   adapter: postgresql
-  database: <%= DATABASE_URL %>
+  database: <%= ENV['DATABASE_URL'] %>
 
