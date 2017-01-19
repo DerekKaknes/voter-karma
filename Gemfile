@@ -14,6 +14,7 @@ gem 'dotenv', :require => 'dotenv/load'
 gem 'json'
 gem 'httparty'
 gem 'rack-flash3', :require => 'rack-flash'
+gem 'rack-flash-session'
 
 group :development do
   gem 'pry'
