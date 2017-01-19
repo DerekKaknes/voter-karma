@@ -56,6 +56,8 @@ GEM
       slop (~> 3.4)
     public_suffix (2.0.5)
     rack (1.6.5)
+    rack-flash-session (1.0.2)
+      rack (>= 1.0)
     rack-flash3 (1.0.5)
       rack
     rack-protection (1.5.3)
@@ -125,6 +127,7 @@ DEPENDENCIES
   json
   pg
   pry
+  rack-flash-session
   rack-flash3
   rack-test
   rake
