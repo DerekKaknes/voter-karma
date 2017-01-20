@@ -20,3 +20,4 @@ s3 = Aws::S3::Resource.new(
 BUCKET = s3.bucket(ENV['S3_BUCKET_NAME'])
 
 require_all 'app'
+

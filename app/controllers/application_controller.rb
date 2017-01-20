@@ -3,6 +3,11 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
   include Sinatra::SessionHelper
   register Sinatra::Sprockets::Helpers
+  use Rack::Session::Cookie, key: 'rack.session',
+    path: '/',
+    secret: 'gotv'
+
+  use Rack::Flash
 
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
@@ -10,8 +15,6 @@ class ApplicationController < Sinatra::Base
 
   configure do
     set :views, 'app/views'
-    set :sessions, true
-    set :sessions_secret, "gotv"
     set :public_folder, "assets"
     # Setup Sprockets
     sprockets.append_path File.join(root, 'assets', 'stylesheets')
@@ -35,14 +38,32 @@ class ApplicationController < Sinatra::Base
     erb :'about'
   end
 
-  get '/score/new' do
-    erb :'score/new'
+  get '/login' do
+    @user = User.new
+    erb :login
+  end
+
+  post '/login' do
+    @user = User.find_by(email: params[:user][:email])
+    if @user and @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect to '/score'
+    else
+      flash[:error] = "Invalid login credentials"
+      redirect to '/login'
+    end
+
   end
 
   get '/logout' do
     session.clear
     redirect to "/"
   end
+
+  get '/score/new' do
+    erb :'score/new'
+  end
+
 
   get '/score' do
     @user = current_user || User.new
