@@ -5,6 +5,7 @@ ruby '2.3.3'
 gem 'sinatra', :require => 'sinatra/base'
 gem 'activerecord', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'sprockets-helpers', :require => 'sprockets-helpers'
 gem 'rake'
 gem 'require_all'
 gem "pg"
@@ -14,7 +15,14 @@ gem 'dotenv', :require => 'dotenv/load'
 gem 'json'
 gem 'httparty'
 gem 'rack-flash3', :require => 'rack-flash'
-gem 'rack-flash-session'
+
+# Asset Pipeline
+gem 'sprockets'
+gem 'sprockets-helpers', :require => 'sinatra/sprockets-helpers'
+gem 'yui-compressor'
+gem 'coffee-script'
+gem 'sass'
+gem 'aws-sdk', '~> 2'
 
 group :development do
   gem 'pry'

@@ -3,25 +3,27 @@
 <h1>About Your Score</h1>
 <br>
 <h4>Your score is based on your voting record data.</h4> <br>
+<p>In order to produce your Voter Score, we pull data from the New York State Board
+of Elections, commonly referred to as the "Voter File", and run some simple data analytics on the information.  In particular, we train predictive models based upon demographic and voter history data that attempt to predict the likelihood that you would participant in a local, midterm or presidential election.  The models that we use are very similar to those that campaigns use when they are determining which voters to target for outreach.  Finally, we aggregate those three underlying Election Scores into a single Voter Score that roughly represents how a generic campaign would view you as a potential voter based on your voting record.</p>
 </div>
 <!-- start div with 3 columns-->
 <div class="row">
   <div class="col-sm-1">
   </div>
   <div class="col-sm-2 text-center">
-    <img src="/img/Voting.png" class="img-responsive" alt="voting">
+    <img src="<%= image_path "Voting.png" %>" class="img-responsive" alt="voting">
     <h4>Your voter history is compiled</h4>
   </div>
   <div class="col-sm-2">
   </div>
   <div class="col-sm-2 text-center">
-    <img src="/img/Scores.png" class="img-responsive" alt="scores">
+    <img src="<%= image_path "Scores.png" %>" class="img-responsive" alt="scores">
     <h4>We analyze your election voting history</h4>
   </div>
   <div class="col-sm-2">
   </div>
   <div class="col-sm-2 text-center">
-    <img src="/img/Score.png" class="img-responsive" alt="score">
+    <img src="<%= image_path "Score.png" %>" class="img-responsive" alt="score">
     <h4>Your overall VoterKarma score is created</h4>
   </div>
   <div class="col-sm-1">

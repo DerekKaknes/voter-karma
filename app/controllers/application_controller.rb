@@ -2,13 +2,25 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
   include Sinatra::SessionHelper
-  use Rack::Flash
+  register Sinatra::Sprockets::Helpers
+
+  set :sprockets, Sprockets::Environment.new(root)
+  set :assets_prefix, '/assets'
+  set :digest_assets, true
+
   configure do
-    set :public_folder, '/public'
-    set :static, true
     set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "secret"
+    set :sessions, true
+    set :sessions_secret, "gotv"
+    set :public_folder, "assets"
+    # Setup Sprockets
+    sprockets.append_path File.join(root, 'assets', 'stylesheets')
+    sprockets.append_path File.join(root, 'assets', 'javascripts')
+    sprockets.append_path File.join(root, 'assets', 'images')
+
+    configure_sprockets_helpers do |helpers|
+      helpers.asset_host = "#{ENV['S3_BUCKET_NAME']}.s3.amazonaws.com"
+    end
   end
 
   get '/' do
